@@ -1,0 +1,32 @@
+# --- BUILD SYSTEM ---
+
+[build-system]
+requires = ["uv_build>=0.8.22,<0.9.0"]
+build-backend = "uv_build"
+
+# --- PROJECT CONFIGURATION ---
+
+[project]
+name = "context7-mcp"
+version = "0.1.0"
+description = "Context7 Library Documentation MCP server for Dedalus."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["ai", "mcp", "agents", "dedalus", "context7", "documentation"]
+
+dependencies = [
+    "dedalus-mcp>=0.4.1",
+    "httpx>=0.28.0",
+    "pydantic>=2.12.5",
+    "python-dotenv>=1.2.1",
+    "uvloop>=0.22.1; platform_system != 'Windows'",
+]
+
+# --- UV CONFIGURATION ---
+
+[tool.uv]
+preview = true
+package = false
+cache-dir = ".cache/uv"
+compile-bytecode = true
